@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+:root {
+    --montserrat: 'Montserrat', sans-serif;
+    --opensans: 'Open Sans', sans-serif;
+    --secondary: #1B98E0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* navbar */
+
+nav.navbar {
+    font-family: var(--montserrat);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.36);
+    z-index: 10;
+}
+
+nav.navbar div.navbar-element {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+nav.navbar div.navbar-element > div {
+    width: 20%;
+}
+
+div.logo {
+    display: none;
+}
+
+.mobile-logo {
+    height: 50px;
+    margin: 5px 0px 0px 5px;
+}
+
+.burger {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+}
+
+.burger:focus {
+    outline: none;
+}
+
+.burger-box {
+    width: 38px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.burger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .1s .2s ease-in-out;
+}
+
+.burger-inner::before,
+.burger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    transition: .2s .2s ease-in-out;
+}
+
+.burger-inner::before {
+    top: -10px;
+}
+
+.burger-inner::after {
+    top: 10px;
+}
+
+.burger-active .burger-inner {
+    background-color: transparent;
+}
+
+.burger-active .burger-inner::before {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.burger-active .burger-inner::after {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* slider */
+
+.slider {
+    width: 100vw;
+    position: relative;
+    background-image: url("./../images/drugi.jpg");
+    background-position: 50% 60%;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 70% 50px 10px 40px auto; 
+    grid-template-columns: 5% 20px 160px 30px auto 5%;
+    margin-top: -60px;
+}
+
+.slider > div.info {
+    grid-column: 2 / 5;
+    grid-row: 2 / 4;
+    background-color: white;
+    padding-top: 7px;
+    font-family: var(--montserrat);
+    border-radius: 5px;
+    z-index: 4;
+    text-align: center;
+    position: relative;
+}
+
+.slider > button {
+    grid-column: 3;
+    grid-row: 3 / 5;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--secondary);
+    z-index: 5;
+    font-family: var(--montserrat);
+    color: white;
+    position: relative;
+}
+
+.slider-blue-box {
+    background-color: var(--secondary);
+    opacity: 0.4;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+/* about, offer, relizations */
+
+span.line {
+    display: block;
+    width: 52px;
+    height: 2px;
+    margin: auto;
+    background-color: var(--secondary);
+}
+
+h2.section-title {
+    text-align: center;
+    font-family: var(--montserrat);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.text-area {
+    text-align: justify;
+    padding: 12px;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+    font-family: var(--opensans);
+}
+
+i.fa-sort-down {
+    font-size: 1.8em;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 1s;
+}
+
+i.fa-sort-down.active {
+    transform: rotate(180deg);
+}
+
+.slide-down {
+    padding-top: 0px;
+    z-index: 2;
+    position: absolute;
+    transform: translateY(-360px);
+    background-color: white;
+    transition: 1s;
+}
+
+.slide-down.displayed {
+    transform: translateY(0px);
+}
+
+/* offer */
+
+section.offer ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+section.offer ul > li {
+    margin-bottom: 12px;
+}
+
+section.offer ul > li .title-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+section.offer ul > li .title-wrapper h3 {
+    font-weight: 500;
+    font-family: var(--montserrat);
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+h3.offer-list::before {
+    content: ' ';
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    position: absolute;
+    z-index: -2;
+    left: -7px;
+    top: 0px;
+    opacity: 0.7;
+}
+
+/* realizations */
+
+.project {
+    width: 240px;
+    height: 350px;
+    font-size: .9rem;
+    background-color: #F0EEEF;
+    margin: 20px auto 30px auto;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+    padding: 15px;
+}
+
+.project .project-title {
+    font-size: 1.2rem;
+    font-family: var(--montserrat);
+}
+
+.project img {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 8px auto 10px auto;
+}
+
+/* contact form */ 
+
+form.contact-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div.form-wrapper {
+    width: 100%;
+    margin-bottom: 13px;
+    position: relative;
+}
+
+form .form-wrapper label {
+    font-family: var(--montserrat);
+    margin-bottom: 1px;
+}
+
+.form-default-style {
+    width: 100%;
+    font-size: 1.1rem;
+    border: 0px;
+    border-bottom: 2px solid black;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding-left: 2px;
+    background-color: #F4F4F4;
+}
+
+form .form-wrapper textarea {
+    width: 100%;
+    border: 2px solid black;
+    font-family: var(--opensans);
+    box-sizing: border-box;
+    padding: 2px 0px 0px 4px;
+    resize: none;
+    background-color: #F4F4F4;
+}
+
+.submit-wrapper {
+    margin: auto;
+    display: inline-block;
+    position: relative;
+}
+
+form input[type=submit] {
+    width: 145px;
+    height: 40px;
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.submit-wrapper::before {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+input[type=submit]:hover {
+    color: white;
+}
+
+.submit-wrapper:hover::before {
+    width: 100%;
+}
+
+.contact form input:focus,
+form .form-wrapper textarea:focus,
+form .form-wrapper select:focus {
+    outline: none;
+}
+
+section.contact div.information-data {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+section.contact div.information-data div {
+    height: 35px;
+    margin-top: 15px;
+}
+
+section.contact div.information-data div i {
+    font-size: 30px;
+}
+
+section.contact select.service-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+}
+
+div.select-wrapper {
+    position: relative;
+}
+
+div.select-wrapper::after {
+    content: '\f338';
+    font-family: FontAwesome;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+}
+
+div.rodo {
+    width: 100%;
+}
+
+div.rodo p.rodo-text {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+label.checkbox-wrapper {
+    position: relative;
+    display: inline;
+}
+
+label.checkbox-wrapper input[type=checkbox] {
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    width: 21px;
+    height: 21px;
+}
+
+label.checkbox-wrapper .custom-checkbox {
+    position: absolute;
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    top: 0px;
+    left: 0px;
+    background-color: #F4F4F4;
+}
+
+label.checkbox-wrapper .custom-checkbox::before {
+    content: '';
+    position: absolute;
+    background-color: black;
+    transform: scale(0);
+    transition: all 0.1s ease-out;
+}
+
+label.checkbox-wrapper .custom-checkbox::after {
+    content: '\2713';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #F4F4F4;
+}
+
+label.checkbox-wrapper input[type=checkbox]:checked ~ .custom-checkbox::before {
+    transform: scale(1);
+    width: 100%;
+    height: 100%;
+}
+
+/* map */
+
+.map.text-area {
+    padding: 0;
+}
+
+@media (max-width: 767px) {
+    nav.navbar div.navbar-element {
+        height: 100vh;
+        width: 100vw;
+        transform: translateX(-100vw);
+        transition: .5s;
+        background-color: white;
+        position: absolute;
+        flex-direction: column;
+    }
+
+    nav.navbar div.active {
+        transform: translateX(0px);
+    }
+
+    nav.navbar div.navbar-element > div {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 5px;
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,223 @@
+@media (min-width: 768px) {
+    div.logo img {
+        width: 8%;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 11;
+    }
+
+    nav.navbar > div.navbar-element div.logo {
+        display: unset;
+    }
+
+    nav.navbar div.navbar-element div.site-part {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        line-height: 60px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    div.site-part::before {
+        content: '';
+        width: 0;
+        height: 100%;
+        background-color: #1B98E0;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        position: absolute;
+        transition: all 0.3s ease;
+        z-index: -1;
+    }
+
+    div.site-part:hover {
+        color: white;
+    }
+
+    div.site-part:hover::before {
+        width: 100%;
+    }
+
+    .mobile-logo, .burger {
+        display: none;
+    }
+
+    .slider > div.info {
+        width: 260px;
+        height: 80px;
+        font-size: 1.4rem;
+    }
+
+    .slider > button {
+        margin-top: 20px;
+        height: 60px;
+        font-size: 1.1rem;
+        width: 120%;
+    }
+
+    .slide-down {
+        transform: translateX(0px);
+    }
+
+    i.fa-sort-down {
+        display: none;
+    }
+
+    .text-area {
+        padding: 30px;
+        font-size: 1.3em;
+    }
+
+    section.offer ul > li .title-wrapper {
+        height: 32px;
+    }
+
+    section.offer ul > li .title-wrapper h3 {
+        font-size: 1.45rem;
+    }
+
+    h3.offer-list::before {
+        width: 32px;
+        height: 32px;
+    }
+
+    .form-default-style {
+        font-size: 1.3rem;
+    }
+
+    form .form-wrapper textarea {
+        font-size: 1.3rem;
+    }
+
+    form input[type=submit] {
+        font-size: 1.2rem;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav.navbar {
+        height: 90px;
+    }
+
+    div.logo img {
+        width: 110px;
+        height: auto;
+    }
+
+    nav.navbar div.navbar-element div.site-part {
+        line-height: 90px;
+        font-size: 1.2rem;
+    }
+
+    span.line {
+        width: 58px;
+        height: 3px;
+    }
+
+    form.contact-form {
+        justify-content: space-between;
+    }
+
+    div.form-wrapper {
+        width: 48%;
+    }
+
+    div.form-wrapper-textarea {
+        width: 100%;
+    }
+
+    div.form-wrapper .select-wrapper {
+        width: 65%;
+    }
+
+    .form-default-style {
+        font-size: 1.5rem;
+    }
+
+    form .form-wrapper label {
+        font-size: 1.5rem;
+        display: block;
+    }
+
+    section.contact div.information-data div:nth-of-type(2) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    div.rodo p.rodo-text {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    nav.navbar div.navbar-element div.site-part {
+        font-size: 1.5rem;
+    }
+
+    .slider > div.info {
+        width: 400px;
+        height: 120px;
+        font-size: 2rem;
+        padding-top: 20px;
+    }
+
+    .slider > button {
+        height: 70px;
+        font-size: 1.5rem;
+        margin-top: 60px;
+        width: 190%;
+    }
+
+    .text-area {
+        font-size: 1.5rem;
+    }
+
+    section.offer ul > li {
+        position: relative;
+        width: 47%;
+    }
+
+    section.offer ul > li .title-wrapper {
+        height: 35px;
+    }
+
+    section.offer ul > li .title-wrapper h3 {
+        margin-bottom: 10px;
+        font-size: 1.6rem;
+    }
+
+    h3.offer-list::before {
+        width: 55px;
+        height: 55px;
+        top: -10px;
+        left: -15px;
+    }
+
+    .project .project-title {
+        font-size: 1.7rem;
+    }
+
+    .project {
+        width: 400px;
+        height: 580px;
+        font-size: 1.5rem;
+    }
+
+    .form-default-style {
+        height: 50px;
+        font-size: 1.7rem;
+        line-height: 50px;
+    }
+}
